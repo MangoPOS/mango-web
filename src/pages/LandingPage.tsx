@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Zap, Cloud, MonitorSmartphone, Printer, Box, CheckCircle2, Store, ShoppingBag, BadgeDollarSign, ArrowRight, ShoppingBasket, Sun, Moon, Download, Wallet, Target, BarChart3, ShieldCheck, FileText, Package, MapPin, Users } from 'lucide-react';
+import { Zap, Cloud, MonitorSmartphone, Printer, Box, CheckCircle2, Store, ShoppingBag, BadgeDollarSign, ArrowRight, ShoppingBasket, Sun, Moon, Download, Wallet, Target, BarChart3, ShieldCheck, FileText, Package, MapPin, Users, Menu, X } from 'lucide-react';
 
 // === CONFIGURACIÓN DE COLORES ===
 // Modificá estos valores para cambiar los colores en toda la landing page
@@ -34,6 +34,7 @@ const THEME = {
 
 const LandingPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Variables CSS dinámicas inyectadas dependiendo del modo seleccionado
   const cssVars = {
@@ -85,12 +86,28 @@ const LandingPage = () => {
               <button className="hidden md:block text-(--c-text-muted) font-medium hover:text-(--c-text-main) transition-colors px-2">
                 Iniciar Sesión
               </button>
-              <button className="bg-(--c-btn-bg) text-(--c-btn-text) px-6 py-2.5 rounded-full font-medium transition-all hover:opacity-90 flex items-center gap-2 shadow-sm">
+              <button className="hidden md:flex bg-(--c-btn-bg) text-(--c-btn-text) px-6 py-2.5 rounded-full font-medium transition-all hover:opacity-90 items-center gap-2 shadow-sm">
                 Solicitar Demo
+              </button>
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+                className="md:hidden p-2 bg-(--c-accent1) text-[#1f2937] hover:opacity-90 rounded-lg transition-all"
+                aria-label="Menú"
+              >
+                {isMobileMenuOpen ? <X size={20} strokeWidth={2.5} /> : <Menu size={20} strokeWidth={2.5} />}
               </button>
             </div>
           </div>
         </div>
+        
+        {/* Menú Mobile */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-(--c-border) bg-(--c-bg) px-4 pt-2 pb-6 space-y-2 shadow-lg absolute w-full z-40">
+            <a href="#caracteristicas" onClick={() => setIsMobileMenuOpen(false)} className="block text-(--c-text-main) hover:bg-(--c-card) font-medium text-lg py-3 px-4 rounded-xl transition-colors">Características</a>
+            <a href="#rubros" onClick={() => setIsMobileMenuOpen(false)} className="block text-(--c-text-main) hover:bg-(--c-card) font-medium text-lg py-3 px-4 rounded-xl transition-colors">Rubros</a>
+            <a href="#precios" onClick={() => setIsMobileMenuOpen(false)} className="block text-(--c-text-main) hover:bg-(--c-card) font-medium text-lg py-3 px-4 rounded-xl transition-colors">Precios</a>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section - Clean & Warm */}
@@ -107,12 +124,12 @@ const LandingPage = () => {
             Gestión de inventario y facturación AFIP para comercios modernos. Diseñado con calidez, construido para la velocidad.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-(--c-btn-bg) text-(--c-btn-text) px-8 py-4 rounded-full font-medium text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-md">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <button className="w-11/12 sm:w-auto bg-(--c-btn-bg) text-(--c-btn-text) px-8 py-4 rounded-full font-medium text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-md">
               Comenzar prueba gratis
               <ArrowRight size={20} />
             </button>
-            <button className="bg-(--c-card) text-(--c-text-main) border border-(--c-border) px-8 py-4 rounded-full font-medium text-lg hover:bg-(--c-bg) transition-colors flex items-center justify-center gap-2">
+            <button className="w-11/12 sm:w-auto bg-(--c-card) text-(--c-text-main) border border-(--c-border) px-8 py-4 rounded-full font-medium text-lg hover:bg-(--c-bg) transition-colors flex items-center justify-center gap-2">
               Ver características
             </button>
           </div>
@@ -512,11 +529,11 @@ const LandingPage = () => {
           <p className="text-xl text-(--c-text-muted) mb-10 font-light leading-relaxed">
             Dejá atrás los métodos tradicionales. La migración es sencilla y te acompañamos en cada paso para que empieces a vender hoy mismo.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-(--c-btn-bg) text-(--c-btn-text) px-10 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <button className="w-11/12 sm:w-auto bg-(--c-btn-bg) text-(--c-btn-text) px-10 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg">
               Solicitar Demostración
             </button>
-            <button className="bg-transparent text-(--c-text-main) border border-(--c-border) px-10 py-4 rounded-full font-medium text-lg hover:bg-(--c-bg) transition-colors flex items-center justify-center gap-2">
+            <button className="w-11/12 sm:w-auto bg-transparent text-(--c-text-main) border border-(--c-border) px-10 py-4 rounded-full font-semibold text-lg hover:bg-(--c-bg) transition-colors flex items-center justify-center gap-2">
               Hablar con Ventas
             </button>
           </div>
