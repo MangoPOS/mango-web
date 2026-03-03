@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Zap, Cloud, MonitorSmartphone, Printer, Box, CheckCircle2, Store, ShoppingBag, BadgeDollarSign, ArrowRight, ShoppingBasket, Sun, Moon, Download, Wallet, Target, BarChart3, ShieldCheck, FileText, Package, MapPin, Users, Menu, X } from 'lucide-react';
+import { Zap, Cloud, MonitorSmartphone, Printer, Box, CheckCircle2, Store, ShoppingBag, BadgeDollarSign, ArrowRight, ShoppingBasket, Sun, Moon, Download, Wallet, Target, BarChart3, ShieldCheck, FileText, Package, MapPin, Users, Menu, X, InfoIcon } from 'lucide-react';
 
 // === CONFIGURACIÓN DE COLORES ===
 // Modificá estos valores para cambiar los colores en toda la landing page
@@ -142,7 +142,8 @@ const LandingPage = () => {
               <ArrowRight size={20} />
             </button>
             <button className="w-11/12 sm:w-auto bg-(--c-card) text-(--c-text-main) border border-(--c-border) px-8 py-4 rounded-full font-medium text-lg hover:bg-(--c-bg) transition-colors flex items-center justify-center gap-2">
-              Ver características
+              Como funciona
+              <InfoIcon size={20} />
             </button>
           </div>
         </div>
