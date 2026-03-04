@@ -13,15 +13,8 @@ export const Navbar = ({ isDarkMode, setIsDarkMode, isMobileMenuOpen, setIsMobil
     <nav className="fixed w-full z-50 bg-(--c-nav-bg) backdrop-blur-sm border-b border-(--c-border) transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex items-center cursor-pointer group gap-2">
-            {/* <div className="w-10 h-10 bg-linear-to-br from-(--c-accent1) to-(--c-accent2) rounded-xl flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-              <ShoppingBasket size={22} strokeWidth={2.5} />
-            </div>
-            <span className="font-logo2 italic text-5xl font-thin tracking-tight text-(--c-text-main)">
-              Mango
-            </span> */}
-
-            <img src={logo} alt="Mango POS Logo" className="h-10 w-auto mb-2.5" />
+          <div className="flex items-center cursor-pointer group gap-2 pt-2.5">
+            <img src={logo} alt="Mango POS Logo" className="h-12 w-auto mb-2" />
             <span className="font-logo text-3xl font-thin tracking-tight text-(--c-text-main)">
               Mango
             </span>

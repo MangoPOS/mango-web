@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
              <div className="flex items-center mb-6 gap-1">
-              <img src={logo} alt="Mango POS Logo" className="h-7 w-auto mb-2.5" />
+              <img src={logo} alt="Mango POS Logo" className="h-7 w-auto mb-1.5" />
               <span className="font-logo text-xl font-thin text-(--c-text-main)">
                 Mango
               </span>
