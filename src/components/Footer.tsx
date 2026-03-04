@@ -1,4 +1,4 @@
-import { ShoppingBasket } from 'lucide-react';
+import logo from '../assets/images/logo.png';
 
 export const Footer = () => {
   return (
@@ -6,11 +6,9 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-linear-to-br from-(--c-accent1) to-(--c-accent2) rounded-lg flex items-center justify-center text-white">
-                <ShoppingBasket size={18} strokeWidth={2.5} />
-              </div>
-              <span className="font-titulo text-xl font-bold text-(--c-text-main)">
+             <div className="flex items-center mb-6 gap-1">
+              <img src={logo} alt="Mango POS Logo" className="h-7 w-auto mb-2.5" />
+              <span className="font-logo text-xl font-thin text-(--c-text-main)">
                 Mango
               </span>
             </div>

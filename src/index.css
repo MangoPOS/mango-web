@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Bukhari";
+  src: url("./assets/fonts/Bukhari Script.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme {
   --font-titulo: "Mochiy Pop One", "DynaPuff", sans-serif;
+  --font-logo: "Bukhari", cursive;
+  --font-logo2: "Grand Hotel", cursive;
 }
