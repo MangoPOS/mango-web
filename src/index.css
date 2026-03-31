@@ -8,7 +8,28 @@
 }
 
 @theme {
-  --font-titulo: "Mochiy Pop One", "DynaPuff", sans-serif;
   --font-logo: "Bukhari", cursive;
-  --font-logo2: "Grand Hotel", cursive;
+
+  /* COLORES */
+  --color-mangoAmarillo: #FFB85C;
+  --color-mangoRosado: #EE8374;
+  
+  /* Tema Claro */
+  --color-fondoClaro1: #FDFCF8;
+  --color-fondoClaro2: #ffffff;
+  --color-textoPrincipalClaro: #1f2937;
+  --color-textoSecundarioClaro: #6b7280;
+  --color-bordeClaro: #f3f4f6;
+  --color-fondoBotonClaro: #445367;
+  --color-textoBotonClaro: #ffffff;
+
+  /* Tema Oscuro */
+  --color-fondoOscuro1: #383D40;
+  --color-fondoOscuro2: #2F3437;
+  --color-textoPrincipalOscuro: #ffffff;
+  --color-textoSecundarioOscuro: #cbd5e1;
+  --color-bordeOscuro: #555D62;        
+  --color-fondoBotonOscuro: #FFB85C;
+  --color-textoBotonOscuro: #1f2937;
+  
 }

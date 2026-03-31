@@ -13,56 +13,30 @@ import { Pricing } from '../components/Pricing';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 
-// === CONFIGURACIÓN DE COLORES ===
-// Modificá estos valores para cambiar los colores en toda la landing page
-const THEME = {
-  primary: '#445367',         // Azul pizarra (usado en botones y fondo oscuro)
-  accent1: '#FFB85C',         // Amarillo/Naranja claro
-  accent2: '#EE8374',         // Naranja/Salmón
-  
-  bgLight: '#FDFCF8',         // Fondo crema pálido (modo claro)
-  bgDark: '#435061',          // Fondo azul oscuro (modo oscuro)
-  
-  cardLight: '#ffffff',       // Fondo de tarjetas u objetos sobre el fondo (modo claro)
-  cardDark: '#323D4D',        // Fondo de tarjetas u objetos (modo oscuro)
-  
-  textMainLight: '#1f2937',   // Texto principal, casi negro (modo claro)
-  textMainDark: '#ffffff',    // Texto principal, blanco (modo oscuro)
-  
-  textMutedLight: '#6b7280',  // Texto secundario (modo claro)
-  textMutedDark: '#cbd5e1',   // Texto secundario (modo oscuro)
-  
-  borderLight: '#f3f4f6',     // Bordes sutiles (modo claro)
-  borderDark: '#5E708A',      // Bordes sutiles (modo oscuro)
-  
-  btnBgLight: '#445367',      // Fondo de botones principales (modo claro)
-  btnBgDark: '#FFB85C',       // Fondo de botones principales (modo oscuro) para mayor contraste
-  
-  btnTextLight: '#ffffff',    // Texto del botón principal (modo claro)
-  btnTextDark: '#1f2937',     // Texto del botón principal (modo oscuro)
-};
-
 const LandingPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Variables CSS dinámicas inyectadas dependiendo del modo seleccionado
+  // Se conectan directamente con las variables globales de Tailwind en index.css
   const cssVars = {
-    '--c-primary': THEME.primary,
-    '--c-accent1': THEME.accent1,
-    '--c-accent2': THEME.accent2,
+    '--c-accent1': 'var(--color-mangoAmarillo)',
+    '--c-accent2': 'var(--color-mangoRosado)',
     
-    '--c-bg': isDarkMode ? THEME.bgDark : THEME.bgLight,
-    '--c-nav-bg': isDarkMode ? THEME.bgDark + 'E6' : THEME.bgLight + 'E6', // E6 = 90% opacity
-    '--c-card': isDarkMode ? THEME.cardDark : THEME.cardLight,
+    '--c-bg': isDarkMode ? 'var(--color-fondoOscuro1)' : 'var(--color-fondoClaro1)',
+    // Usamos color-mix nativo de CSS para mantener el 90% de opacidad que usabas antes
+    '--c-nav-bg': isDarkMode 
+      ? 'color-mix(in srgb, var(--color-fondoOscuro1) 90%, transparent)' 
+      : 'color-mix(in srgb, var(--color-fondoClaro1) 90%, transparent)', 
+    '--c-card': isDarkMode ? 'var(--color-fondoOscuro2)' : 'var(--color-fondoClaro2)',
     
-    '--c-text-main': isDarkMode ? THEME.textMainDark : THEME.textMainLight,
-    '--c-text-muted': isDarkMode ? THEME.textMutedDark : THEME.textMutedLight,
+    '--c-text-main': isDarkMode ? 'var(--color-textoPrincipalOscuro)' : 'var(--color-textoPrincipalClaro)',
+    '--c-text-muted': isDarkMode ? 'var(--color-textoSecundarioOscuro)' : 'var(--color-textoSecundarioClaro)',
     
-    '--c-border': isDarkMode ? THEME.borderDark : THEME.borderLight,
+    '--c-border': isDarkMode ? 'var(--color-bordeOscuro)' : 'var(--color-bordeClaro)',
     
-    '--c-btn-bg': isDarkMode ? THEME.btnBgDark : THEME.btnBgLight,
-    '--c-btn-text': isDarkMode ? THEME.btnTextDark : THEME.btnTextLight,
+    '--c-btn-bg': isDarkMode ? 'var(--color-fondoBotonOscuro)' : 'var(--color-fondoBotonClaro)',
+    '--c-btn-text': isDarkMode ? 'var(--color-textoBotonOscuro)' : 'var(--color-textoBotonClaro)',
   } as React.CSSProperties;
 
   return (
